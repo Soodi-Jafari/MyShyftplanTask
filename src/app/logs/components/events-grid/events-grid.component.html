@@ -1,0 +1,27 @@
+
+ <div class="row e-table">
+     <table>
+         <thead>
+             <tr>
+                 <th>Id</th>
+                 <th>Position Name</th>
+                 <th>Start time</th>
+                 <th>End time</th>
+                 <th></th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let item of events">
+                 <td>{{item.id}}</td>
+                 <td>{{item.position?.name}}</td>
+                 <td>{{item.startsAt | date:'short'}}</td>
+                 <td>{{item.endsAt | date:'short'}}</td>
+                 <td><input type="button" value="View Detail" (click)="detailClick(item)" ></td>
+             </tr>
+         </tbody>
+     </table>
+ 
+ </div>
+ <div class="row">
+     <input class="f-button" type="button" value="Load more" (click)="loadMore()" >
+ </div>

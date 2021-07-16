@@ -1,0 +1,43 @@
+<div class="flex-container">
+    <div>
+        Position Name:
+        <input readonly  class="f-control" type="text" [value]="eventDetail.position?.name">
+    </div>
+    <div>
+        Start Time:
+        <input readonly  class="f-control" type="text" [value]="eventDetail.startsAt | date:'short'">
+    </div>
+    <div>
+        End Time: 
+        <input readonly class="f-control" type="text" [value]="eventDetail.endsAt | date:'short'">
+    </div>
+</div>
+<div class="row">
+    <div class="label">
+        Employees
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Firt Name</th>
+                    <th>Last Name</th>
+                    <th>Avatar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of eventDetail.employees">
+                    <td>{{item.id}}</td>
+                    <td>{{item.firstName}}</td>
+                    <td>{{item.lastName}}</td>
+                    <td><img src="{{item.image}}" width="40" height="40"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <input class="f-button" type="button" value="Go to event list" (click)="goToList()">
+</div>
