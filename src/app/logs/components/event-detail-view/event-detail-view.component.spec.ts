@@ -11,8 +11,7 @@ describe('EventDetailViewComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ EventDetailViewComponent ],
-      imports: [RouterTestingModule],
-      providers: [Router]
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   });

@@ -18,10 +18,12 @@ export class EventDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.viewModel.id = Number(params['id']);
-      this.getEvent();
-    });
+    if (this.route.params) {
+      this.route.params.subscribe(params => {
+        this.viewModel.id = Number(params['id']);
+        this.getEvent();
+      });
+    }
   }
 
   getEvent(): void {

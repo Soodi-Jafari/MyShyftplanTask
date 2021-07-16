@@ -1,5 +1,7 @@
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { LogsFacade } from '../../logs.facade';
 
 import { EventsListComponent } from './events-list.component';
@@ -15,8 +17,10 @@ describe('EventsListComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ EventsListComponent ],
+      imports: [HttpClientModule, RouterTestingModule],
       providers: [
         LogsFacade,
+       // HttpClient,
         {provide: ActivatedRoute, useValue: fakeActivatedRoute}
       ]
     })
